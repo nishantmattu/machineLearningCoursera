@@ -79,9 +79,9 @@ h = aThree;
 %for each training example, sum up the columns...
 
 %yv = [1:num_labels] == y;
-%eye(num_labels)([1;2;4],:)
+%eye(num_labels)([1;2;4],:) just a way to index...will give [1 0 0 0 0 0 0 0 0 0 0; 0 1 0 0 0 0 0  0 0 0 0 ; 0 0 0 1 0 0 0 0 0 0 0 ]...10 col/row
 
-yv= eye(num_labels)(y,:); % set y as vector representing output digit y = 5 = [0;0;0;0;5...]
+yv= eye(num_labels)(y,:); % set y as vector representing output digit y = 5 = [0 0 0 0 1...]
 
 
 J = (1 / m) * sum(sum([-yv .* log(h) - (1 - yv) .* log(1 - h)]));
